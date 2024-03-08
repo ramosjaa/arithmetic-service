@@ -15,3 +15,6 @@ function divide(n, m){
 }
 
 module.exports = { add };
+module.exports = { subtract };
+module.exports = { multiply };
+module.exports = { divide };
