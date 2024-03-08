@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
 const {add} = require("./arithmetica");
@@ -6,7 +7,12 @@ const {multiply} = require("./arithmetica");
 const {divide} = require("./arithmetica");
 const app = express();
 app.use(cors());
-const port = 3001;
+
+// if(!process.env.PORT){
+//     throw new Error('Please specify port number.');
+// }
+
+const port = process.env.PORT;
 
 app.get('/', (req, res) => {
     res.send('Arithmetic service - Hello World!');
@@ -38,6 +44,11 @@ app.get('/div/:n/:m', (req, res) =>{
     let m = Number(req.params.m);
     let quo = divide(n, m);
     res.json(quo);
+})
+
+app.get('/prime/:n', (req, res) => {
+    
+    res.json();
 })
 
 app.listen(port);
