@@ -1,16 +1,16 @@
 require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
-const {add} = require("./arithmetica");
-const {subtract} = require("./arithmetica");
-const {multiply} = require("./arithmetica");
-const {divide} = require("./arithmetica");
+const {add} = require("./arithmetica.js");
+const {subtract} = require("./arithmetica.js");
+const {multiply} = require("./arithmetica.js");
+const {divide} = require("./arithmetica.js");
 const app = express();
 app.use(cors());
 
-// if(!process.env.PORT){
-//     throw new Error('Please specify port number.');
-// }
+if(!process.env.PORT){
+    throw new Error('Please specify port number.');
+}
 
 const port = process.env.PORT;
 
