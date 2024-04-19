@@ -20,7 +20,7 @@ jobs:
             - name: Build and push the image
               run: |
                docker login --username ramosjaa --password ${{secrets.ACCESS_TOKEN}} ghcr.io
-               docker build -t ghcr.io/ramosjaa/arithmetic-service:1 --file Dockerfile .
+               docker build -t ghcr.io/ramosjaa/arithmetic-service:$VERSION --file Dockerfile .
                docker push ghcr.io/ramosjaa/arithmetic-service:$VERSION
             - name: Publish the image to azure container registry
               run: |
